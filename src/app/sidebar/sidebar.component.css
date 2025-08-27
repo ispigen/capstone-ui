@@ -1,0 +1,54 @@
+.app-container {
+  height: calc(100vh - 64px); 
+}
+
+.sidenav {
+  width: 260px;
+  background: #1f3a57;
+  color: white;
+}
+
+.profile {
+  text-align: center;
+  padding: 16px;
+}
+
+.profile-photo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.main-content {
+  padding: 16px;
+}
+
+.hide-desktop {
+  display: none;
+}
+.menu-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px 0 12px;
+}
+.exam-schedule-container {
+  background: #fff;
+
+}
+
+
+@media (max-width: 768px) {
+  .hide-desktop {
+    display: inline-flex;
+  }
+
+  .sidenav {
+    width: 220px;
+  }
+}

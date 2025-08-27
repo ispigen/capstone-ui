@@ -1,0 +1,66 @@
+<div class="edit-schedule-container">
+  <!-- Header -->
+  <mat-toolbar color="primary" class="edit-header">
+    <span>Edit Schedule</span>
+  </mat-toolbar>
+
+  <!-- Content -->
+  <div class="edit-content">
+    <!-- Schedule Table -->
+    <table mat-table *ngIf="!editing" class="mat-elevation-z2 schedule-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Room</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let schedule of schedules">
+          <td>{{ schedule.subject }}</td>
+          <td>{{ schedule.date }}</td>
+          <td>{{ schedule.time }}</td>
+          <td>{{ schedule.room }}</td>
+          <td>
+            <button mat-raised-button color="primary" (click)="startEdit(schedule)">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Edit Form -->
+    <div *ngIf="editing" class="edit-form">
+      <h3>Update Schedule</h3>
+      <form>
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Subject</mat-label>
+          <input matInput [(ngModel)]="editing.subject" name="subject" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Date</mat-label>
+          <input matInput type="date" [(ngModel)]="editing.date" name="date" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Time</mat-label>
+          <input matInput type="time" [(ngModel)]="editing.time" name="time" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Room</mat-label>
+          <input matInput [(ngModel)]="editing.room" name="room" />
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button mat-raised-button color="primary" (click)="saveEdit()">Save</button>
+          <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

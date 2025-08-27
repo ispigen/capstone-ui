@@ -1,0 +1,45 @@
+.edit-schedule-container {
+  display: flex;
+  flex-direction: column;
+  margin: 16px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.edit-header {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #294a70;
+}
+
+.edit-content {
+  padding: 16px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.edit-form {
+  margin-top: 16px;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+}

@@ -1,0 +1,48 @@
+<mat-drawer-container class="app-container">
+  <!-- Sidebar Drawer -->
+  <mat-drawer #drawer mode="side" class="sidenav" [opened]="true">
+   <div class="profile">
+  <img class="profile-photo">
+  <div class="profile-info">
+    <div class="id">{{ userId }}</div>
+    <div class="name">{{ userName }}</div>
+    <div class="course">{{ course }}</div>
+    <div class="year">Year:  {{ yearLevel }}</div>
+  </div>
+</div>
+
+<div class="exam-schedule-container">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>event</mat-icon>
+          Exam Schedule
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-nav-list>
+        <a routerLink="/home" mat-list-item >Generate Schedule</a>
+        <a routerLink="/edit" mat-list-item> Edit Schedule </a>
+      </mat-nav-list>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+
+    <mat-divider></mat-divider>
+  </mat-drawer>
+
+  <!-- Main Content -->
+  <mat-drawer-content>
+    <!-- Sidebar toggle button stuck to the left -->
+    <!-- Toggle Button (hamburger, borderless) -->
+<button mat-icon-button class="drawer-toggle" (click)="drawer.toggle()">
+  <mat-icon>menu</mat-icon>
+</button>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>

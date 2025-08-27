@@ -1,0 +1,33 @@
+<mat-sidenav-container class="sidenav-container">
+
+  <!-- Sidebar -->
+  <mat-sidenav #sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item router Link="/generate-schedule" routerLinkActive="active">Generate Schedule</a>
+      <a mat-list-item routerLink="/edit" routerLinkActive="active">Edit Schedule</a>
+      <a mat-list-item router Link="/home" routerLinkActive="active">Profile</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+
+    <!-- Header -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Exam Scheduling System</span>
+    </mat-toolbar>
+
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      © 2025 Exam Scheduling System
+    </footer>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
