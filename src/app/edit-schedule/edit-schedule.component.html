@@ -7,29 +7,43 @@
   <!-- Content -->
   <div class="edit-content">
     <!-- Schedule Table -->
-    <table mat-table *ngIf="!editing" class="mat-elevation-z2 schedule-table">
-      <thead>
-        <tr>
-          <th>Subject</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Room</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let schedule of schedules">
-          <td>{{ schedule.subject }}</td>
-          <td>{{ schedule.date }}</td>
-          <td>{{ schedule.time }}</td>
-          <td>{{ schedule.room }}</td>
-          <td>
-            <button mat-raised-button color="primary" (click)="startEdit(schedule)">
-              Edit
-            </button>
-          </td>
-        </tr>
-      </tbody>
+    <table mat-table [dataSource]="schedules" class="mat-elevation-z2 schedule-table" *ngIf="!editing">
+
+      <!-- Subject Column -->
+      <ng-container matColumnDef="subject">
+        <th mat-header-cell *matHeaderCellDef> Subject </th>
+        <td mat-cell *matCellDef="let schedule"> {{ schedule.subject }} </td>
+      </ng-container>
+
+      <!-- Date Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let schedule"> {{ schedule.date }} </td>
+      </ng-container>
+
+      <!-- Time Column -->
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef> Time </th>
+        <td mat-cell *matCellDef="let schedule"> {{ schedule.time }} </td>
+      </ng-container>
+
+      <!-- Room Column -->
+      <ng-container matColumnDef="room">
+        <th mat-header-cell *matHeaderCellDef> Room </th>
+        <td mat-cell *matCellDef="let schedule"> {{ schedule.room }} </td>
+      </ng-container>
+
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let schedule">
+          <button mat-raised-button color="primary" (click)="startEdit(schedule)">Edit</button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Declarations -->
+      <tr mat-header-row *matHeaderRowDef="['subject', 'date', 'time', 'room', 'action']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['subject', 'date', 'time', 'room', 'action'];"></tr>
     </table>
 
     <!-- Edit Form -->

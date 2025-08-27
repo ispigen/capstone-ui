@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+
 import { MatSliderModule } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material';
-
+import { MatSelectModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
@@ -20,7 +21,14 @@ import { MatMenuModule } from '@angular/material';
 import { MatExpansionModule } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
 import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
-import { HomeComponent } from './home/home.component';
+import { LayoutComponent } from './layout/layout.component';
+import { GenerateScheduleComponent } from './generate-schedule/generate-schedule.component';
+import { MatDatepickerModule } from '@angular/material';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatTableModule } from '@angular/material';
+import { MatPaginatorModule } from '@angular/material';
+import { MatSortModule } from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +36,8 @@ import { HomeComponent } from './home/home.component';
     SidebarComponent,
     HeaderComponent,
     EditScheduleComponent,
-    HomeComponent
+    LayoutComponent,
+    GenerateScheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,13 @@ import { HomeComponent } from './home/home.component';
     MatDividerModule,
     MatToolbarModule,
     MatMenuModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
